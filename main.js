@@ -175,6 +175,7 @@ function highest(arr) {
 test_array = [1, 5, 7, 8, 2, 3, 19, 52, 25, 11, 15]
 console.log(highest(test_array));
 
+// Write a function which calculates the total sum of elements inside an array in WHILE LOOP
 
 function summary(numbers) {
     let result = 0;
@@ -187,3 +188,30 @@ function summary(numbers) {
 }
 let test = summary([1, 5, 6])
 console.log(test)
+
+//Algorithm, gteq bolor kent tver@
+
+let random_nmb = [1, 2, 4, 5, 6, 7, 2, 3]
+for (let i = 0; i < random_nmb.length; i++) {
+    if (random_nmb[i] % 2 !== 0) {
+        console.log(random_nmb[i])
+    }
+}
+
+//Algorithm, gteq duplikatner@ massivi mej ev texadreq iranc nor massivi mej
+
+let any_numbers = [1, 2, 3, 2, 4, 5, 5, 6];
+
+let duplicates = [];
+
+for (let i = 0; i < any_numbers.length; i++) {
+    for (let j = 0; j < any_numbers.length; j++) {
+        if (i !== j) {
+            if (any_numbers[i] === any_numbers[j] && !duplicates.includes(any_numbers[i])) {
+                duplicates.push(any_numbers[i])
+            }
+        }
+    }
+}
+
+console.log(duplicates)
