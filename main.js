@@ -215,3 +215,46 @@ for (let i = 0; i < any_numbers.length; i++) {
 }
 
 console.log(duplicates)
+
+
+// Dublicate remove examples
+
+
+// let arr = [1,1,3,5,5,7,8,9,11,11,11,11,15];
+// let new_array = [];
+
+// for(let item of arr ){
+// if(new_array.indexOf(item) == -1){
+//      new_array.push(item)    
+// }
+// }
+// console.log(new_array)
+
+// console.log(arr.indexOf(11))
+
+
+// let arr = [1,2,3,3,3,3,3,3,3,4,5,5,5, 6]
+
+// new_arr = []
+
+// for(let i =0 ; i < arr.length; i++){
+//         debugger
+//     if(!new_arr.includes(arr[i])){
+//         new_arr.push(arr[i])
+//     }
+// }
+
+// console.log(new_arr)
+
+// let arr = [1,1,1,3,3,5,5,7,8,9,11,11,11,11,15]
+
+//  function sortArrayDub(){
+// let new_Array = [];
+// for(let i = 0;i<arr.length;i++){
+//   if(arr[i]!==arr[i-1]){
+//     new_Array.push(arr[i])
+//   }
+// }
+// return new_Array
+// }
+// console.log(sortArrayDub(arr)) 
