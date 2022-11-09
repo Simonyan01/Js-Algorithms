@@ -286,3 +286,14 @@ console.log(duplicates)
 // return new_Array
 // }
 // console.log(sortArrayDub(arr)) 
+
+
+//stexcel massiv, vori mej ka massiv, orinak let a = [[1,2,3], [4,5,6], [7,8,9]]
+//ogtagorcel for loop for loopi mej vor console log aneq 1,2,3,4,5,6,7,8,9
+
+const arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+for (i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+        console.log(arr[i][j]);
+    }
+}
