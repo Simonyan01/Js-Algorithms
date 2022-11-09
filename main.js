@@ -8,6 +8,34 @@ let factorial1 = function (num) {
 }
 console.log(factorial1(6));
 
+//Algorithm, gteq bolor kent tver@
+
+// let random_nmb = [1, 2, 4, 5, 6, 7, 2, 3];
+// for (let i = 0; i < random_nmb.length; i++) {
+//     if (random_nmb[i] % 2 !== 0) {
+//         return random_nmb[i];
+//     }
+// }
+// let result = random_nmb[i];
+// console.log(result);
+
+//Algorithm, gteq duplikatner@ massivi mej ev texadreq iranc nor massivi mej
+
+// let numbers = [1, 2, 3, 2, 4, 5, 5, 6];
+
+// let duplicates = [];
+
+// for (let i = 0; i < numbers.length; i++) {
+//     for (let j = 0; j < numbers.length; j++) {
+//         if (i !== j) {
+//             if (numbers[i] === numbers[j] && !duplicates.includes(numbers[i])) {
+//                 duplicates.push(numbers[i]);
+//             }
+//         }
+//     }
+// }
+
+// console.log(duplicates);
 
 // write a function which changes places of 2 given arguments
 // for example, if function accepts 5 and 2, it should return 2 and 5
@@ -225,7 +253,7 @@ console.log(duplicates)
 
 // for(let item of arr ){
 // if(new_array.indexOf(item) == -1){
-//      new_array.push(item)    
+//      new_array.push(item)
 // }
 // }
 // console.log(new_array)
