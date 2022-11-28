@@ -297,3 +297,23 @@ for (i = 0; i < arr.length; i++) {
         console.log(arr[i][j]);
     }
 }
+
+
+// Bind Method
+
+const person = {
+    name: "Mike",
+    surname: "Tindall",
+    fullName: function () {
+        return this.name + " " + this.surname
+    }
+}
+
+const newPerson = {
+    name: "Ben",
+    surname: "Parker"
+}
+
+let result = person.fullName.bind(newPerson)
+
+console.log(result(person));
