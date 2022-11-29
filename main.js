@@ -317,3 +317,27 @@ const newPerson = {
 let result = person.fullName.bind(newPerson)
 
 console.log(result(person));
+
+// Recursion factorial
+
+function factorIal(number) {
+    if (number < 1) {
+        return 1
+    }
+    return number * factorIal(number - 1)
+
+}
+
+console.log(factorIal(5)); // should return 120
+
+
+//sum from given number to 0
+function sum(number) {
+    if (number <= 1) {
+        return 1
+    }
+    return number + sum(number - 1)
+
+}
+
+console.log(sum(10)) //should return 55
