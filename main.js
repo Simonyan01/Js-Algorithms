@@ -274,29 +274,29 @@ console.log(duplicates)
 
 // console.log(new_arr)
 
-// let arr = [1,1,1,3,3,5,5,7,8,9,11,11,11,11,15]
+let arr = [1, 1, 1, 3, 3, 5, 5, 7, 8, 9, 11, 11, 11, 11, 15]
 
-//  function sortArrayDub(){
-// let new_Array = [];
-// for(let i = 0;i<arr.length;i++){
-//   if(arr[i]!==arr[i-1]){
-//     new_Array.push(arr[i])
-//   }
-// }
-// return new_Array
-// }
-// console.log(sortArrayDub(arr)) 
+function sortArrayDub() {
+    let new_Array = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== arr[i - 1]) {
+            new_Array.push(arr[i])
+        }
+    }
+    return new_Array
+}
+console.log(sortArrayDub(arr))
 
 
 //stexcel massiv, vori mej ka massiv, orinak let a = [[1,2,3], [4,5,6], [7,8,9]]
 //ogtagorcel for loop for loopi mej vor console log aneq 1,2,3,4,5,6,7,8,9
 
-const arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-for (i = 0; i < arr.length; i++) {
-    for (let j = 0; j < arr[i].length; j++) {
-        console.log(arr[i][j]);
-    }
-}
+// const arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+// for (i = 0; i < arr.length; i++) {
+//     for (let j = 0; j < arr[i].length; j++) {
+//         console.log(arr[i][j]);
+//     }
+// }
 
 
 // Bind Method
@@ -341,3 +341,32 @@ function sum(number) {
 }
 
 console.log(sum(10)) //should return 55
+
+
+
+
+function dupl(array1, array2) {
+    const temp = [];
+
+    for (let i = 0; i < array1.length; i++) {
+        if (!temp.includes(array1[i])) {
+            temp.push(array1[i]);
+        }
+    }
+    for (let i = 0; i < array2.length; i++) {
+        if (!temp.includes(array2[i])) {
+            temp.push(array2[i]);
+        }
+    }
+}
+const testarr1 = ["Jay", "Stan", "Anna"]
+const testarr2 = ["Lita", "Jay", "Thawne"]
+
+console.log(dupl(testarr1, testarr2))
+
+// const testarr3 = ["Maria", "Stephanie", "Maria"]
+// const testarr4 = ["Ron", "Stephanie", "Romero"]
+// console.log(dupl(testarr3, testarr4))
+
+
+
