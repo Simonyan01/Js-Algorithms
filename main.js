@@ -358,7 +358,7 @@ console.log(factorial1(6));
 
 // console.log(findMax(myArr));
 
-// text reverse 
+// text reverse
 
 // function reverse(str) {
 //   return str.split("").reverse().join("");
@@ -374,3 +374,18 @@ console.log(factorial1(6));
 //   return letters.join("");
 // }
 // console.log(reverse("Это обычный текст"));
+
+// function capitaLetter(data) {
+//   const splitted = data.split("");
+//   const capital = splitted[0].toUpperCase();
+//   splitted.splice(0, 1);
+//   const result = [capital, ...splitted].join("");
+//   return result;
+// }
+// console.log(capitaLetter("lyov"));
+
+const myName = "lyov";
+
+const result = myName.charAt(0).toUpperCase() + myName.slice(1);
+
+console.log(result);
