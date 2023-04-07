@@ -10,7 +10,7 @@ console.log(factorial1(6));
 
 //Algorithm, gteq bolor kent tver@
 
-// let randomom_num = [1, 2, 4, 5, 6, 7, 2, 3];
+// let random_num = [1, 2, 4, 5, 6, 7, 2, 3];
 // for (let i = 0; i < random_num.length; i++) {
 //   if (random_num[i] % 2 !== 0) {
 //     console.log(random_num[i]);
@@ -38,8 +38,7 @@ console.log(factorial1(6));
 // // for example, if function accepts 5 and 2, it should return 2 and 5
 
 // function myTmp(a, b) {
-//   let tmp;
-//   tmp = a;
+//   let tmp = a;
 //   a = b;
 //   b = tmp;
 //   return a + " " + b;
@@ -49,11 +48,11 @@ console.log(factorial1(6));
 
 // //swap example
 
-// // a = 3;
-// // b = 5;
-// // [a,b] = [b,a]
+// let a = 3;
+// let b = 5;
+// [a,b] = [b,a]
 
-// // console.log(a, b);
+// console.log(a, b);
 
 // // write a function which accepts 3 numbers and returns their sum
 
@@ -67,9 +66,9 @@ console.log(factorial1(6));
 // let array = [1, 2, 3];
 
 // let check_len = () => {
-//   if (array.length != 3) {
-//     console.log(false);
-//   } else console.log(true);
+//   if (array.length == 3) {
+//     console.log(true);
+//   } else console.log(false);
 // };
 
 // check_len();
@@ -84,26 +83,26 @@ console.log(factorial1(6));
 //       new_arr.push(arr[i]);
 //     }
 //   }
+//   return new_arr;
 // }
-// remove_dup(test_arr);
-// console.log(new_arr);
+// console.log(remove_dup(test_arr));
 
 // // Duplicate Remove Example
 
-// // let numbers = [1, 5, 6, 2, 3, 4, 5, 2, 3, 1]
+// let numbers = [1, 5, 6, 2, 3, 4, 5, 2, 3, 1];
 
-// // let newNumbers = numbers.filter((element, index) => {
-// //     return numbers.indexOf(element) === index;
-// // });
+// let newNumbers = numbers.filter((element, index) => {
+//   return numbers.indexOf(element) === index;
+// });
 
-// // console.log(newNumbers);
+// console.log(newNumbers);
 
 // // Using linear search, find the index of 18 Given an array  [1, 5, 7, 2, 3, 6, 18, 19]
 
 // const find_index = [1, 5, 7, 2, 3, 6, 18, 19];
 
 // for (let i = 0; i < find_index.length; i++) {
-//   if (find_index[i] == 18) {
+//   if (find_index[i] === 18) {
 //     console.log(find_index[i]);
 //   }
 // }
@@ -113,15 +112,13 @@ console.log(factorial1(6));
 
 // let numbers = [3, 5, 7, 9, 11];
 
-// let total_sum = function (numbersArr) {
+// function total_sum(numbersArray) {
 //   let result = 0;
-
-//   for (let i = 0; i < numbersArr.length; i += 1) {
-//     let e = numbersArr[i];
-//     result += e;
+//   for (let i = 0; i < numbersArray.length; i++) {
+//     result += numbersArray[i];
 //   }
 //   return result;
-// };
+// }
 // console.log(total_sum(numbers));
 
 // // Write a function to count the factorial of a number (use 2 methods, linear for loop, and recursion)
