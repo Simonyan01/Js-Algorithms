@@ -1,12 +1,12 @@
 // Hashvel factorial tiv@
 
-function factorial1(num) {
-  for (let i = num - 1; i >= 1; i--) {
-    num = num * i;
-  }
-  return num;
-}
-console.log(factorial1(6));
+// function factorial1(num) {
+//   for (let i = num - 1; i >= 1; i--) {
+//     num = num * i;
+//   }
+//   return num;
+// }
+// console.log(factorial1(6));
 
 //Algorithm, gteq bolor kent tver@
 
@@ -381,8 +381,47 @@ console.log(factorial1(6));
 // }
 // console.log(capitaLetter("lyov"));
 
-const myName = "lyov";
+// const myName = "lyov";
 
-const result = myName.charAt(0).toUpperCase() + myName.slice(1);
+// const result = myName.charAt(0).toUpperCase() + myName.slice(1);
 
-console.log(result);
+// console.log(result);
+
+// function Rabbit() {}
+// Rabbit.prototype = {
+//   eats: true,
+// };
+// let rabbit = new Rabbit();
+// delete Rabbit.prototype.eats;
+// console.log(rabbit);
+
+// let n = 0;
+// console.log((n + 2)- (n % 2));
+
+// console.log(Boolean(Infinity));
+
+// console.log(Boolean(+0));
+
+// function func(n) {
+//   console.log(n);
+// }
+// let x = 7;
+// func(x++);
+
+// let num1 = 2;
+// let num2 = "8";
+// let operation = num2 - num1;
+// console.log(operation);
+
+// let z = 5;
+// console.log(z++);
+// console.log(++z);
+
+// let i = 6;
+// let j = 3;
+
+// if (++i > 6 || ++j > 3) {
+//   // do
+// }
+
+// console.log(i, j);
