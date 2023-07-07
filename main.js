@@ -449,13 +449,11 @@ const numbers = [1, 2, 3];
 
 // forEach with arrow function
 
-
 // const foreach = () => numbers.forEach((number) => console.log(number * 2));
 
 // foreach()
 
 // Array.prototype.forEach.call(numbers, (x) => console.log(x * 2));
-
 
 // Map with arrow function
 
@@ -465,7 +463,6 @@ const numbers = [1, 2, 3];
 // console.log(map(numbers));
 
 // const map = () => numbers.map((number) => number * 2);
-
 
 // Reduce with arrow function
 
@@ -478,3 +475,29 @@ const numbers = [1, 2, 3];
 // const reduce = () => numbers.reduce((val, i) => val + i, 0);
 
 // console.log(reduce(numbers));
+
+
+// let secondsToRemoveOccurrences = function (s) {
+//   let str = s
+//     .split("")
+//     .map((elem) => Number(elem))
+//     .reverse();
+//   let sec = 0;
+//   let check = true;
+//   while (check) {
+//     check = false;
+//     console.log(str);
+//     for (let i = 1; i < str.length; i++) {
+//       if (str[i] < str[i - 1]) {
+//         str[i] = 1;
+//         str[i - 1] = 0;
+//         check = true;
+//         i++;
+//       }
+//     }
+//     if (check) sec++;
+//   }
+//   return sec;
+// };
+
+// console.log(secondsToRemoveOccurrences("0110101"));
