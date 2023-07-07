@@ -1,5 +1,7 @@
 // // Hashvel factorial tiv@
 
+const { truncate } = require("graceful-fs");
+
 // function factorial1(num) {
 //   for (let i = num - 1; i >= 1; i--) {
 //     num = num * i;
@@ -310,6 +312,7 @@
 // console.log(factorIal(5)); // should return 120
 
 // //sum from given number to 0
+
 // function mySum(number) {
 //   if (number <= 1) {
 //     return 1;
@@ -317,7 +320,7 @@
 //   return number + mySum(number - 1);
 // }
 
-// console.log(mySum(10)); //should return 55
+// console.log(mySum(10)); // should return 55
 
 // const testarr1 = ["Jay", "Stan", "Anna"];
 // const testarr2 = ["Lita", "Jay", "Thawne"];
@@ -426,3 +429,52 @@
 // }
 
 // console.log(i, j);
+
+// const getData = () => new Promise((resolve) => resolve([1, 1, 2, 3, 5, 8, 13]));
+
+// // getData().then(data => console.log(data))
+
+// async function asyncExample() {
+//   try {
+//     const data = await getData();
+//     console.log("Data", data);
+//   } catch (e) {
+//     console.log(e);
+//   }
+// }
+
+// asyncExample();
+
+const numbers = [1, 2, 3];
+
+// forEach with arrow function
+
+
+// const foreach = () => numbers.forEach((number) => console.log(number * 2));
+
+// foreach()
+
+// Array.prototype.forEach.call(numbers, (x) => console.log(x * 2));
+
+
+// Map with arrow function
+
+// const map = () => {
+//   return numbers.map((number) => number * 2);
+// };
+// console.log(map(numbers));
+
+// const map = () => numbers.map((number) => number * 2);
+
+
+// Reduce with arrow function
+
+// const reduce = () => {
+//   return numbers.reduce((val, i) => {
+//     return val + i;
+//   }, 0);
+// };
+
+// const reduce = () => numbers.reduce((val, i) => val + i, 0);
+
+// console.log(reduce(numbers));
