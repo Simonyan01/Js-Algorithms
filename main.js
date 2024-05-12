@@ -1,6 +1,14 @@
-// // Hashvel factorial tiv@
+// Binary search --------------------------------
+// Function to calculate factorial using a for loop
 
-const { truncate } = require("graceful-fs");
+// const factorial = (num) => {
+//   let result = 1
+//   while (num > 1) {
+//     result *= num--
+//   }
+//   return result
+// }
+// console.log(factorial(5))
 
 // function factorial1(num) {
 //   for (let i = num - 1; i >= 1; i--) {
@@ -10,7 +18,234 @@ const { truncate } = require("graceful-fs");
 // }
 // console.log(factorial1(6));
 
-// // Algorithm, gteq bolor kent tver@
+// const factorial = (num) => {
+//   if (num === 1) {
+//     return 1
+//   }
+//   return Math.ceil(num * factorial(num - 1))
+// }
+
+// console.log(factorial(5));
+
+// const factorial = (num) => {
+//   let result = 1
+//   if (num === 1) {
+//     return 1
+//   }
+//   for (let i = 1; i <= num; i++) {
+//     result *= i
+//   }
+
+//   return result
+// }
+
+// console.log(factorial(5))
+
+// ----------------------------------------------
+
+// Binary search --------------------------------
+// Implementation of binary search algorithm
+
+// const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+// const binarySearch = (array, item) => {
+//   let start = 0
+//   let end = array.length - 1
+//   while (start <= end) {
+//     let middle = Math.floor((start + end) / 2)
+//     if (array[middle] === item) {
+//       return middle
+//     } else if (item < array[middle]) {
+//       end = middle - 1
+//     } else {
+//       start = middle + 1
+//     }
+//   }
+//   return "Position not found"
+// }
+
+// console.log(binarySearch(array, 15))
+
+// ----------------------------------------------
+
+// Remove duplicates ----------------------------
+// Function to remove duplicates from an array
+
+// const removeDuplicates = function (nums) {
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] === nums[i - 1]) {
+//       nums.splice(i, 1)
+//       i--
+//     }
+//   }
+//   return nums;
+// }
+
+// const removeDuplicates = function (nums) {
+//     let uniqueNums = [];
+//     for (let i = 0; i < nums.length; i++) {
+//       if (!uniqueNums.includes(nums[i])) {
+//         uniqueNums.push(nums[i]);
+//       }
+//     }
+//     return uniqueNums;
+//   }
+
+// let myNumbers = [1, 5, 6, 2, 3, 4, 5, 2, 3, 1];
+
+// let newNumbers = myNumbers.filter((element, index) => myNumbers.indexOf(element) === index);
+
+// console.log(newNumbers);
+
+// ----------------------------------------------
+
+// Get first unique character -------------------
+// Function to find the index of the first unique character in a string
+
+// let firstUniqueChar = function (str) {
+//   for (let i = 0; i < str.length; i++) {
+//     if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
+//       return i
+//     }
+//   }
+//   return -1
+// }
+
+// ----------------------------------------------
+
+// Max Length between equal characters ----------
+// Function to find the maximum length between equal characters
+
+// let maxLengthBetweenEqualCharacters = function (str) {
+//   for (let i = 0; i < str.length; i++) {
+//     if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
+
+//     }
+//   }
+//   return -1
+// }
+
+// let maxLengthBetweenEqualCharacters = function (str) {
+//   let maxSubstringLength = 0
+
+//   for (let i = 0; i < str.length; i++) {
+//     let firstIndex = str.indexOf(str[i])
+//     let lastIndex = str.lastIndexOf(str[i])
+//     if (firstIndex !== lastIndex) {
+//       let substringLength = firstIndex + lastIndex - 1
+//       maxSubstringLength = Math.max(maxSubstringLength, substringLength)
+//     }
+//   }
+//   return maxSubstringLength
+// }
+
+// ----------------------------------------------
+
+// Distinct Integers ----------------------------
+// Function to generate distinct integers
+
+// const distinctIntegers = function (n) {
+//   let board = []
+//   for (let day = 1; day <= 20; day++) {
+//     let distinctNumbers = []
+//     for (let i = 0; i < n; i++) {
+//       distinctNumbers.push(Math.floor(Math.random() * 100))
+//     }
+//     board.push(distinctNumbers)
+//   }
+//   return board
+// }
+
+// console.log(distinctIntegers(5))
+// console.log(3 * 4 + "5" - 2)
+
+// ----------------------------------------------
+
+// Number is prime or not -----------------------
+// Function to check if a number is prime
+
+// const isPrime = (num) => {
+//   if (num <= 1) return false
+
+//   for (let i = 2; i <= Math.sqrt(num); i++) {
+//     if (num % i === 0) return false
+//   }
+//   return true
+// }
+
+// console.log(isPrime(6))
+
+//  ---------------------------------------------
+
+// Function to convert the first letter of each word to uppercase
+
+// const toTitleCase = (str) => str.replace(/\b\w/g, (l) => l.toUpperCase())
+
+// console.log(toTitleCase("lyov"))
+
+// ----------------------------------------------
+
+// Function Debounce ----------------------------
+// Debounce function to delay function execution
+
+// const debounce = (fn, ms) => {
+//   let timeout
+//   return function () {
+//     const fnCall = () => fn.apply(this, arguments)
+//     clearTimeout(timeout)
+//     timeout = setTimeout(fnCall, ms)
+//   }
+// }
+
+// function onChange(e) {
+//   e.target.value
+//   console.log(e.target.value)
+// }
+
+// onChange = debounce(onChange, 600)
+
+// document.getElementById("debounce").addEventListener("keyup", onChange)
+
+// ----------------------------------------------------------------
+
+// Function Throttle
+// Throttle function to limit the rate of function execution
+
+// const throttle = (func, ms) => {
+//   let isThrottled = false
+//   let savedArgs
+//   let savedThis
+//   function innerFunc() {
+//     if (isThrottled) {
+//       savedArgs = arguments
+//       savedThis = this
+//       return
+//     }
+
+//     func.apply(this, arguments)
+//     isThrottled = true
+//     setTimeout(() => {
+//       isThrottled = false
+//       if (savedArgs) {
+//         innerFunc.apply(savedThis, savedArgs)
+//         savedArgs = savedThis = null
+//       }
+//     }, ms)
+//   }
+//   return innerFunc
+// }
+
+// function movedMouse() {
+//   console.log(new Date())
+// }
+
+// movedMouse = throttle(movedMouse, 4000)
+
+// setInterval(movedMouse, 1000)
+
+// ----------------------------------------------------------------
+
+// Algorithm, gteq bolor kent tver@
 
 // let random_num = [1, 2, 4, 5, 6, 7, 2, 3];
 // for (let i = 0; i < random_num.length; i++) {
@@ -19,25 +254,25 @@ const { truncate } = require("graceful-fs");
 //   }
 // }
 
-// // Algorithm, gteq duplikatner@ massivi mej ev texadreq iranc nor massivi mej
+// Algorithm, gteq duplikatner@ massivi mej ev texadreq iranc nor massivi mej
 
 // let numbers1 = [1, 2, 3, 2, 4, 5, 5, 6, 6];
 
-// let duplicates1 = [];
+// let duplicates = [];
 
 // for (let i = 0; i < numbers1.length; i++) {
 //   for (let j = 0; j < numbers1.length; j++) {
 //     if (i !== j) {
-//       if (numbers1[i] === numbers1[j] && !duplicates1.includes(numbers1[i])) {
-//         duplicates1.push(numbers1[i]);
+//       if (numbers1[i] === numbers1[j] && !duplicates.includes(numbers1[i])) {
+//         duplicates.push(numbers1[i]);
 //       }
-//     }
+//
 //   }
 // }
-// console.log(duplicates1);
+// console.log(duplicates);
 
-// // write a function which changes places of 2 given arguments
-// // for example, if function accepts 5 and 2, it should return 2 and 5
+// Write a function which changes places of 2 given arguments
+// For example, if function accepts 5 and 2, it should return 2 and 5
 
 // function myTmp(a, b) {
 //   let tmp = a;
@@ -48,7 +283,7 @@ const { truncate } = require("graceful-fs");
 
 // console.log(myTmp(45, 67));
 
-// //swap example
+// Swap example
 
 // let a = 3;
 // let b = 5;
@@ -56,14 +291,14 @@ const { truncate } = require("graceful-fs");
 
 // console.log(a, b);
 
-// // write a function which accepts 3 numbers and returns their sum
+// Write a function which accepts 3 numbers and returns their sum
 
 // function sum(first, second) {
 //   console.log(first + second);
 // }
 // sum(4, 6);
 
-// // write a function to test if an array has length of 3
+// Write a function to test if an array has length of 3
 
 // let array = [1, 2, 3];
 
@@ -75,31 +310,7 @@ const { truncate } = require("graceful-fs");
 
 // check_len();
 
-// // write a function which removes duplicates from an array [1, 5, 6, 2, 3, 4, 5, 2, 3, 1]
-
-// let test_arr = [1, 3, 5, 1, 2, 7, 5, 1, 2];
-// let new_arr = [];
-// function remove_dup(arr) {
-//   for (let i = 0; i < arr.length; i++) {
-//     if (!new_arr.includes(arr[i])) {
-//       new_arr.push(arr[i]);
-//     }
-//   }
-//   return new_arr;
-// }
-// console.log(remove_dup(test_arr));
-
-// // Duplicate Remove Example
-
-// let myNumbers = [1, 5, 6, 2, 3, 4, 5, 2, 3, 1];
-
-// let newNumbers = myNumbers.filter((element, index) => {
-//   return myNumbers.indexOf(element) === index;
-// });
-
-// console.log(newNumbers);
-
-// // Using linear search, find the index of 18 Given an array  [1, 5, 7, 2, 3, 6, 18, 19]
+// Using linear search, find the index of 18 Given an array  [1, 5, 7, 2, 3, 6, 18, 19]
 
 // const find_index = [1, 5, 7, 2, 3, 6, 18, 19];
 
@@ -109,8 +320,8 @@ const { truncate } = require("graceful-fs");
 //   }
 // }
 
-// // Write a function to calculate the total sum of all integers in a given array
-// // For example[1, 6, 2, 3, 2] = 1 + 6 + 2 + 3 + 2 =14
+// Write a function to calculate the total sum of all integers in a given array
+// For example [1, 6, 2, 3, 2] = 1 + 6 + 2 + 3 + 2 = 14
 
 // let numbers = [3, 5, 7, 9, 11];
 
@@ -123,29 +334,18 @@ const { truncate } = require("graceful-fs");
 // }
 // console.log(total_sum(numbers));
 
-// // Write a function to count the factorial of a number (use 2 methods, linear for loop, and recursion)
-// // Example, factorial of 5 = 1*2*3*4*5 = 120
+//  Write a function print any word you give as a parameters n amount of times
 
-// let factorial = function (nmb) {
-//   for (let i = nmb - 1; i >= 1; i--) {
-//     nmb = nmb * i;
-//   }
-//   return nmb;
-// };
-// console.log(factorial(7));
-
-// // Write a function print any word you give as a parameters n amount of times
-// // For example
 // function word_print(word, count) {
 //   let array = [];
 //   for (let i = 0; i < count; array[i++]) array[i] = word;
 //   return array.join("");
 // }
-// console.log(word_print("hello ", 5));
-// // Expected result = hellohellohellohellohello
 
-// // Write a function which calculates the total sum of elements inside an array and divides them by n
-// // For example: arr = [1, 5, 6], n = 3, (1 + 5 + 6) / 3 = 4
+// console.log(word_print("hello ", 5)); ---- Expected result = hellohellohellohellohello
+
+// Write a function which calculates the total sum of elements inside an array and divides them by n
+// For example: arr = [1, 5, 6], n = 3, (1 + 5 + 6) / 3 = 4
 
 // let test_array = [1, 5, 6];
 // let divide = 3;
@@ -161,7 +361,7 @@ const { truncate } = require("graceful-fs");
 
 // console.log(calc(test_array, divide));
 
-// // Write a function which checks if a given number can be divided by n without a remainder
+// Write a function which checks if a given number can be divided by n without a remainder
 
 // function isDivided(num, num_to_divide) {
 //   if (num % num_to_divide == 0) {
@@ -172,7 +372,9 @@ const { truncate } = require("graceful-fs");
 
 // console.log(isDivided(79, 10));
 
-// // Write a function which finds the highest number inside an array
+// Write a function which finds the highest number inside an array
+
+// let test_array = [1, 5, 7, 8, 2, 3, 19, 52, 25, 11, 15];
 
 // function highest(arr) {
 //   let max = arr[0];
@@ -181,10 +383,10 @@ const { truncate } = require("graceful-fs");
 //   }
 //   return max;
 // }
-// test_array = [1, 5, 7, 8, 2, 3, 19, 52, 25, 11, 15];
+
 // console.log(highest(test_array));
 
-// // Write a function which calculates the total sum of elements inside an array in WHILE LOOP
+// Write a function which calculates the total sum of elements inside an array in WHILE LOOP
 
 // function summary(numbers) {
 //   let result = 0;
@@ -195,63 +397,8 @@ const { truncate } = require("graceful-fs");
 //   }
 //   return result;
 // }
-// let test = summary([1, 5, 6]);
-// console.log(test);
 
-// //Algorithm, gteq bolor kent tver@
-
-// let random_nmb = [1, 2, 4, 5, 6, 7, 2, 3];
-// for (let i = 0; i < random_nmb.length; i++) {
-//   if (random_nmb[i] % 2 !== 0) {
-//     console.log(random_nmb[i]);
-//   }
-// }
-
-// //Algorithm, gteq duplikatner@ massivi mej ev texadreq iranc nor massivi mej
-
-// let any_numbers = [1, 2, 3, 2, 4, 5, 5, 6];
-
-// let duplicates = [];
-
-// for (let i = 0; i < any_numbers.length; i++) {
-//   for (let j = 0; j < any_numbers.length; j++) {
-//     if (i !== j) {
-//       if (
-//         any_numbers[i] === any_numbers[j] &&
-//         !duplicates.includes(any_numbers[i])
-//       ) {
-//         duplicates.push(any_numbers[i]);
-//       }
-//     }
-//   }
-// }
-
-// console.log(duplicates);
-
-// // Dublicate remove examples
-
-// let arr = [1, 1, 3, 5, 5, 7, 8, 9, 11, 11, 11, 11, 15];
-// let new_array = [];
-
-// for (let item of arr) {
-//   if (new_array.indexOf(item) === -1) {
-//     new_array.push(item);
-//   }
-// }
-
-// console.log(new_array);
-
-// let arr = [1, 2, 3, 3, 3, 3, 3, 3, 3, 4, 5, 5, 5, 6];
-
-// let new_arr = [];
-
-// for (let i = 0; i < arr.length; i++) {
-//   if (!new_arr.includes(arr[i])) {
-//     new_arr.push(arr[i]);
-//   }
-// }
-
-// console.log(new_arr);
+// console.log(summary([1, 5, 6]));
 
 // let arr = [1, 1, 1, 3, 3, 5, 5, 7, 8, 9, 11, 11, 11, 11, 15];
 // let new_Array = [];
@@ -266,8 +413,8 @@ const { truncate } = require("graceful-fs");
 // }
 // console.log(sortArrayDub(arr));
 
-// //stexcel massiv, vori mej ka massiv, orinak let a = [[1,2,3], [4,5,6], [7,8,9]]
-// //ogtagorcel for loop for loopi mej vor console log aneq 1,2,3,4,5,6,7,8,9
+// stexcel massiv, vori mej ka massiv, orinak let a = [[1,2,3], [4,5,6], [7,8,9]]
+// ogtagorcel for loop for loopi mej vor console log aneq 1,2,3,4,5,6,7,8,9
 
 // const arr = [
 //   [1, 2, 3],
@@ -300,7 +447,7 @@ const { truncate } = require("graceful-fs");
 
 // console.log(myResult(person));
 
-// // Recursion factorial
+// Recursion factorial
 
 // function factorIal(number) {
 //   if (number < 1) {
@@ -311,7 +458,7 @@ const { truncate } = require("graceful-fs");
 
 // console.log(factorIal(5)); // should return 120
 
-// //sum from given number to 0
+// Sum from given number to 0
 
 // function mySum(number) {
 //   if (number <= 1) {
@@ -320,7 +467,7 @@ const { truncate } = require("graceful-fs");
 //   return number + mySum(number - 1);
 // }
 
-// console.log(mySum(10)); // should return 55
+// console.log(mySum(10));  ---- should return 55
 
 // const testarr1 = ["Jay", "Stan", "Anna"];
 // const testarr2 = ["Lita", "Jay", "Thawne"];
@@ -342,10 +489,10 @@ const { truncate } = require("graceful-fs");
 // }
 // console.log(dupl(testarr1, testarr2));
 
-// // For Example
-// // const testarr3 = ["Maria", "Stephanie", "Maria"]
-// // const testarr4 = ["Ron", "Stephanie", "Romero"]
-// // console.log(dupl(testarr3, testarr4))
+//  For Example
+//  const testarr3 = ["Maria", "Stephanie", "Maria"]
+//  const testarr4 = ["Ron", "Stephanie", "Romero"]
+//  console.log(dupl(testarr3, testarr4))
 
 // const myArr = [1, 42, 352, 5, 236, 2, 6, 236, 23, 4, 23, 56, 23, 623523];
 
@@ -361,12 +508,13 @@ const { truncate } = require("graceful-fs");
 
 // console.log(findMax(myArr));
 
-// // text reverse
+//  Text reverse
 
-// // function reverse(str) {
-// //   return str.split("").reverse().join("");
-// // }
-// // console.log(reverse("Привет мир,как дела"));
+//  function reverse(str) {
+//    return str.split("").reverse().join("");
+//  }
+
+//  console.log(reverse("Привет мир"));
 
 // function reverse(data) {
 //   let letters = [];
@@ -376,6 +524,7 @@ const { truncate } = require("graceful-fs");
 //   }
 //   return letters.join("");
 // }
+
 // console.log(reverse("Это обычный текст"));
 
 // function capitaLetter(data) {
@@ -445,13 +594,9 @@ const { truncate } = require("graceful-fs");
 
 // asyncExample();
 
-const numbers = [1, 2, 3];
-
 // forEach with arrow function
 
 // const foreach = () => numbers.forEach((number) => console.log(number * 2));
-
-// foreach()
 
 // Array.prototype.forEach.call(numbers, (x) => console.log(x * 2));
 
@@ -460,6 +605,7 @@ const numbers = [1, 2, 3];
 // const map = () => {
 //   return numbers.map((number) => number * 2);
 // };
+
 // console.log(map(numbers));
 
 // const map = () => numbers.map((number) => number * 2);
@@ -475,7 +621,6 @@ const numbers = [1, 2, 3];
 // const reduce = () => numbers.reduce((val, i) => val + i, 0);
 
 // console.log(reduce(numbers));
-
 
 // let secondsToRemoveOccurrences = function (s) {
 //   let str = s
