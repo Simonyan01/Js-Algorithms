@@ -4,19 +4,20 @@
 // const factorial = (num) => {
 //   let result = 1
 //   while (num > 1) {
-//     result *= num--
+//     result *= num
+//     num--
 //   }
 //   return result
 // }
 // console.log(factorial(5))
 
-// function factorial1(num) {
-//   for (let i = num - 1; i >= 1; i--) {
-//     num = num * i;
+// function factorial(num) {
+//   for (let i = num - 1; i > 1; i--) {
+//     num = num * i
 //   }
-//   return num;
+//   return num
 // }
-// console.log(factorial1(6));
+// console.log(factorial(5))
 
 // const factorial = (num) => {
 //   if (num === 1) {
@@ -646,3 +647,996 @@
 // };
 
 // console.log(secondsToRemoveOccurrences("0110101"));
+
+// for (let i = 10; i < 100; i++) {
+//   if (i % 3 == 0 && i % 5 == 0) {
+//     console.log("FB")
+//   } else if (i % 3 == 0) {
+//     console.log("F")
+//   } else if (i % 5 == 0) {
+//     console.log("B")
+//   } else {
+//     console.log(i)
+//   }
+// }
+
+// for (let i = 0; i < 5; i++) {
+//   for (let j = 0; j < 20; j++) {
+//     document.write("+")
+//   }
+//   document.write("<br>")
+//   document.body.style.margin = "5rem"
+// }
+
+// for (let i = 0; i < 20; i++) {
+//   for (let k = 0; k < 20 - i; k++) {
+//     document.write("&nbsp;")
+//   }
+//   for (let j = 0; j < i + 1; j++) {
+//     document.write("+")
+//   }
+
+//   document.write("<br>")
+//   document.body.style.margin = "5rem"
+// }
+
+// let count = 0
+// for (let i = 10; i < 100; i++) {
+//   if (i % 3 == 0 && i % 5 == 0) {
+//     count++
+//     if (count == 4) {
+//       console.log(i)
+//       break
+//     }
+//   }
+// }
+
+// for (let i = 10; i < 50; i++) {
+//   if (i % 3 == 0) {
+//     continue
+//   }
+//   console.log(i)
+// }
+
+// let p = +prompt("Մուտքագրեք թիվ")
+
+// for (let i = 1; i <= 10; i++) {
+//   let result = i * p
+//   console.log(`${i} x ${p} = ${result}`)
+// }
+
+// for (let i = 1; i <= 10; i++) {
+//   for (let j = 1; j <= 10; j++) {
+//     let result = i * j
+//     console.log(`${i} x ${j} = ${result}`)
+//   }
+//   console.log("")
+// }
+
+// for (let i = 10; i < 16; i++) {
+//   for (let j = 0; j < 60; j += 5) {
+//     let hour = i < 10 ? "0" + i : i
+//     let min = j < 10 ? "0" + j : j
+//     console.log(`${hour}:${min}`)
+//   }
+// }
+
+// for (let i = 1; i <= 20; i++) {
+//   if (i % 4 === 0) {
+//     console.log(i)
+//   } else if (i % 5 === 0) {
+//     console.log("Five")
+//   }
+// }
+
+// ----------------------------------------------------------------
+// function firstIdx(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] % 2 == 0) {
+//       return i
+//     }
+//   }
+//   return -1
+// }
+
+// console.log(firstIdx([3, 8, 4, 2]))
+// ----------------------------------------------------------------
+// function vowelCount(text) {
+//   let vowels = "aeouiAEOUI"
+//   let count = 0
+//   for (let i = 0; i < text.length; i++) {
+//     if (vowels.includes(text[i])) {
+//       count++
+//     }
+//   }
+//   return count
+// }
+
+// console.log(vowelCount("Armenia"))
+// ----------------------------------------------------------------
+// function changeNumbers(text) {
+//   return text.replace(/[0-9]/g, "*")
+// }
+
+// console.log(changeNumbers("a32c b8af e2c45"))
+// ----------------------------------------------------------------
+// function regexExample(text) {
+//   let nums = text.match(/\d+/g)
+//   let sum = 0
+//   for (let i = 0; i < nums.length; i++) {
+//     sum += parseInt(nums[i])
+//   }
+//   return sum
+// }
+
+// console.log(regexExample("a32c b8k a14c"))
+// ----------------------------------------------------------------
+// function chess(pos) {
+//   let regex = /^[A-H][1-8]$/
+//   return regex.test(pos)
+// }
+
+// console.log(chess("C55"))
+// console.log(chess("C5"))
+// ----------------------------------------------------------------
+
+// Ֆունկցիա, որը ստանում է տեքստ և վերադարձնում ամենաերկար բառի հերթական համարը:
+
+// function longestWordIndex(text) {
+//   const words = text.split(" ")
+
+//   let longestIndex = 0
+//   let maxLength = 0
+//   for (let i = 0; i < words.length; i++) {
+//     if (words[i].length > maxLength) {
+//       maxLength = words[i].length
+//       longestIndex = i
+//     }
+//   }
+//   return longestIndex
+// }
+
+// console.log(longestWordIndex("This is a test sentence"))
+// console.log(longestWordIndex("Another example with different length words"))
+
+// Ֆունկցիա, որը ստանում է տեքստ և վերադարձնում թվանշան պարունակող բառերի քանակը:
+
+// function countWordsWithDigits(text) {
+//   const words = text.split(" ")
+
+//   let count = 0
+//   for (let i = 0; i < words.length; i++) {
+//     if (/\d/.test(words[i])) {
+//       count++
+//     }
+//   }
+//   return count
+// }
+
+// console.log(countWordsWithDigits("Mix of words and num8ers"))
+// console.log(countWordsWithDigits("There are 2 apples and 3 oranges"))
+// console.log(countWordsWithDigits("No numbers here"))
+
+// Ֆունկցիա, որը ստանում է տեքստ, բոլոր ձայնավորները փոխարինում * ով:
+
+// function replaceVowelsWithAsterisk(text) {
+//   return text.replace(/[aeiou]/gi, "*")
+// }
+
+// console.log(replaceVowelsWithAsterisk("Apricot"))
+
+// Ֆունկցիա, որը ստանում է a, b թվեր և վերադարձնում a-ից b հատվածում գտնվող բոլոր թվերի գումարը:
+
+// function sumInRange(a, b) {
+//   let sum = 0
+//   for (let i = a; i <= b; i++) {
+//     sum += i
+//   }
+//   return sum
+// }
+
+// console.log(sumInRange(2, 8))
+
+// function isPalindrome(num) {
+//   let text = num.toString()
+//   let n = text.length
+
+//   for (let i = 0; i < n / 2; i++) {
+//     if (text[i] !== text[n - 1 - i]) {
+//       return false
+//     }
+//   }
+//   return true
+//   // return text == [...text].reverse().join("")
+// }
+
+// console.log(isPalindrome("annae"))
+
+// function twoSum(nums, target) {
+//   // for (let i = 0; i < nums.length - 1; i++) {
+//   //   for (let j = i + 1; j < nums.length; j++) {
+//   //     if (nums[i] + nums[j] == target) {
+//   //       return [i, j]
+//   //     }
+//   //   }
+//   // }
+//   let temp = [] // [0, 1, 2, 3], indices -> [2, 3, 4, 1]
+//   for (let i = 0; i < nums.length; i++) {
+//     let diff = target - nums[i] // diff = 7 - 2 = 5 | diff = 7 - 3 = 4 | diff = 7 - 4 = 3
+//     if (diff in temp) {
+//       return [temp[diff], i]
+//     }
+//     temp[nums[i]] = i
+//   }
+// }
+
+// console.log(twoSum([2, 3, 4, 1], 7))
+
+// function task(text) {
+//   let [hour, min] = text.split(":")
+//   min -= 10
+//   if (min < 0) {
+//     hour--
+//     min += 60
+//   }
+//   if (hour < 0) {
+//     hour = 23
+//   }
+//   return `${hour}:${min.toString().padStart(2, "0")}`
+// }
+
+// console.log(task("11:00"))
+
+// function evaluate(text) {
+//   let nums = text.split(/[+-]/) // ["14","2","3","6"]
+//   let actions = text.match(/[+-]/g) // ["+","-","+"]
+//   let result = +nums[0] // 14
+//   for (let i = 0; i < actions.length; i++) {
+//     if (actions[i] == "+") {
+//       result += +nums[i + 1]
+//     } else {
+//       result -= nums[i + 1]
+//     }
+//   }
+//   return result
+//   // return eval(text)
+// }
+
+// console.log(evaluate("14+2-3+6"))
+
+// function parent() {
+//   let cache = []
+//   return factorial
+
+//   function factorial(n) {
+//     let p = 1
+//     for (let i = 2; i <= n; i++) {
+//       p *= i
+//     }
+//     cache[n] = p
+//     return p
+//   }
+// }
+
+// let result = parent()
+
+// console.log(result(5))
+
+// const binarySearch = (arr, target, start = 0, end = arr.length - 1) => {
+//   if (start > end) {
+//     return -1
+//   }
+
+//   const mid = Math.floor((start + end) / 2)
+
+//   if (arr[mid] === target) {
+//     return mid
+//   }
+
+//   if (arr[mid] > target) {
+//     return binarySearch(arr, target, start, mid - 1)
+//   } else {
+//     return binarySearch(arr, target, mid + 1, end)
+//   }
+// }
+
+// const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// const target = 7
+// const result = binarySearch(array, target)
+
+// console.log(result)
+
+// function isPrime(num) {
+//   if (num <= 1) return false // Numbers less than or equal to 1 are not prime
+//   for (let i = 2; i < Math.sqrt(num); i++) {
+//     if (num % i === 0) {
+//       return false // If num is divisible by any number other than 1 and itself
+//     }
+//   }
+//   return true // If no divisors were found, num is a prime number
+// }
+
+// console.log(isPrime(121))
+
+// class Student {
+//   exams = []
+//   constructor(name) {
+//     this.name = name
+//   }
+//   addExam(examInfo) {
+//     const { exams } = this
+//     exams.push(examInfo)
+//   }
+//   average() {
+//     const { exams } = this
+//     return exams.reduce((a, b) => a + b.rate, 0) / exams.length
+//   }
+//   info() {
+//     console.log(this.name)
+//     this.exams.forEach((e) => {
+//       console.log(e.subject, e.rate)
+//     })
+//     console.log(`Avg: ${this.average()}`)
+//   }
+// }
+
+// class Exam {
+//   constructor(subject, rate) {
+//     this.subject = subject
+//     this.rate = rate
+//   }
+// }
+
+// let s1 = new Student("Anna")
+
+// s1.addExam(new Exam("Math", 2))
+// s1.addExam(new Exam("English", 10))
+// s1.addExam(new Exam("Physics", 9))
+
+// console.log(s1)
+// console.log(s1.average())
+// s1.info()
+
+// class Person {
+//   name = null
+//   #salary = null // Private field
+//   get salary() {
+// return this.#salary * 0.7
+//   }
+//   set salary(val) {
+// if (val < 0) {
+//   throw new Error("Salary can't have a negative value")
+// }
+// this.#salary = val
+//   }
+// }
+//
+// let p = new Person()
+// p.name = "Ashot"
+// p.salary = -250000
+// console.log(p)
+// console.log(p.salary)
+
+// class Person {
+//   constructor(name, age) {
+//     this.name = name
+//     this.age = age
+//   }
+//   info() {
+//     console.log(this)
+//   }
+// }
+
+// class Male extends Person {}
+
+// class Female extends Person {
+//   constructor(name, age, isMother) {
+//     super(name, age)
+//     this.isMother = isMother
+//   }
+// }
+
+// let p1 = new Person("John", 40)
+// let p2 = new Male("Tiko", 42)
+// let p3 = new Female("Anna", 27, true)
+
+// p1.info()
+// p2.info()
+// p3.info()
+
+// console.log(p2 instanceof Male) // true
+// console.log(p2 instanceof Person) // true
+// console.log(p2 instanceof Female) // false
+
+// class Point2d {}
+// class Point3d extends Point2d {}
+
+// var point = new Point2d(3, 4)
+
+// console.log(point instanceof Point2d) // true
+// console.log(point instanceof Point3d) // false
+
+// var anotherPoint = new Point3d(3, 4, 5)
+
+// console.log(anotherPoint instanceof Point2d) // true
+// console.log(anotherPoint instanceof Point3d) // true
+
+// class Employee {
+//   #salary = null // private դաշտ
+//   constructor(name, age, gender, salary) {
+//     this.name = name
+//     this.age = age
+//     this.gender = gender
+//     this.salary = salary
+//   }
+
+//   get salary() {
+//     return this.#salary * 0.73 // վերադառնում է աշխատավարձի 73%-ը
+//   }
+
+//   set salary(value) {
+//     if (value > 0) {
+//       this.#salary = value
+//     } else {
+//       throw new Error("Salary must be a positive number")
+//     }
+//   }
+// }
+
+// class Teacher extends Employee {
+//   constructor(name, age, gender, salary, isLead) {
+//     super(name, age, gender, salary)
+//     this.isLead = isLead // լրացուցիչ դաշտ՝ դասղեկ լինել-չլինելու մասին
+//   }
+// }
+
+// class Doctor extends Employee {
+//   // Այստեղ ոչ մի լրացուցիչ դաշտ պետք չէ, ուղղակի ժառանգում ենք Employee-ից
+// }
+
+// class Developer extends Employee {
+//   constructor(name, age, gender, salary, position) {
+//     super(name, age, gender, salary)
+//     this.position = position // լրացուցիչ դաշտ՝ դիրքը (junior/senior/middle)
+
+//     if (!["junior", "middle", "senior"].includes(position)) {
+//       throw new Error("Position must be 'Junior','Middle' or 'Senior'")
+//     }
+//   }
+// }
+
+// // Օրինակ՝
+// const teacher = new Teacher("Anna", 30, "female", 100000, true)
+// const doctor = new Doctor("David", 40, "male", 150000)
+// const developer = new Developer("Mike", 25, "male", 120000, "middle")
+
+// console.log(teacher.salary)
+// console.log(developer.position)
+
+// const employees = [
+//   new Teacher("Anna", 30, "female", 1000000, true),
+//   new Doctor("David", 40, "male", 150000),
+//   new Developer("Mike", 25, "male", 120000, "junior"),
+//   new Teacher("Karen", 45, "male", 90000, false),
+//   new Developer("Lily", 28, "female", 200000, "senior"),
+// ]
+
+// const highestPaidEmployee = employees.reduce((prev, current) => (prev.salary > current.salary ? prev : current))
+
+// console.log(`Ամենաբարձր աշխատավարձով աշխատակիցն է՝ ${highestPaidEmployee.name} - ${highestPaidEmployee.salary}`)
+
+// const highestPaidTeacher = employees
+//   .filter((employee) => employee instanceof Teacher)
+//   .reduce((prev, current) => {
+//     return prev.salary > current.salary ? prev : current
+//   })
+
+// console.log(`Ամենաբարձր աշխատավարձով ուսուցիչն է՝ ${highestPaidTeacher.name} - ${highestPaidTeacher.salary}`)
+
+// const seniorDevelopers = employees.filter((employee) => employee instanceof Developer && employee.position === "senior")
+// const averageSeniorSalary = seniorDevelopers.reduce((sum, developer) => sum + developer.salary, 0) / seniorDevelopers.length
+
+// console.log(`Senior ծրագրավորողների միջին աշխատավարձն է՝ ${averageSeniorSalary}`)
+
+// const lowestPaidLeadTeacher = employees
+//   .filter((employee) => employee instanceof Teacher && employee.isLead)
+//   .reduce((prev, current) => {
+//     return prev.salary < current.salary ? prev : current
+//   })
+
+// console.log(`Ամենացածր աշխատավարձով դասղեկն է՝ ${lowestPaidLeadTeacher.name} - ${lowestPaidLeadTeacher.salary}`)
+
+// Array.prototype.filter2 = function (callback) {
+//     if (typeof callback !== "function") {
+//         throw new TypeError(`${callback} is not a function`)
+//     }
+//     let temp = []
+//     for (let i = 0; i < this.length; i++) {
+//         if (callback(this[i], i, this)) {
+//             temp.push(this[i])
+//         }
+//     }
+//     return temp
+// }
+
+// Array.prototype.reduce2 = function (callback, initial) {
+//     let acc = (initial === undefined) ? this[0] : initial
+//     let start = (initial === undefined) ? 1 : 0
+
+//     for (let i = start; i < this.length; i++) {
+//         acc = callback(acc, this[i], i, this)
+//     }
+
+//     return acc
+// }
+
+// let x = [2, 3, 5]
+// let temp = x.reduce2((a, b) => a + b)
+// console.log(temp)
+
+// Number.isNan2 = function (x) {
+//   if (typeof x == "number" && x != x) {
+//     return true
+//   }
+//   return false
+// }
+
+// ----------------------------------------------------------------------------
+
+// Array.prototype.exampleOfIncludes = function (searchElement, fromIndex = 0) {
+//     while (fromIndex < this.length) {
+//         if (this[fromIndex] === searchElement) {
+//             return true
+//         }
+//         fromIndex++
+//     }
+//     return false
+
+//     // let n = fromIndex >= 0 ? fromIndex : this.length + fromIndex;
+
+//     // n = Math.max(n, 0);
+
+//     // while (n < this.length) {
+//     //     if (this[n] === searchElement) {
+//     //         return true;
+//     //     }
+//     //     n++;
+//     // }
+//     // return false;
+// }
+
+// let x1 = [6, 7, -2, 89, 8]
+// let temp = x1.exampleOfIncludes(-2)
+// console.log(temp);
+
+// ----------------------------------------------------------------------------
+
+// Array.prototype.exampleOfEvery = function (callback) {
+//   if (typeof callback !== "function") {
+//     throw new TypeError(`${callback} is not a function`)
+//   }
+
+//   for (let i = 0; i < this.length; i++) {
+//     if (!callback(this[i], i)) {
+//       // Եթե որևէ տարր չի բավարարում պայմանին
+//       return false
+//     }
+//   }
+
+//   return true
+// }
+
+// ----------------------------------------------------------------------------
+
+// Array.prototype.exampleOfSome = function (callback) {
+//   if (typeof callback !== "function") {
+//     throw new TypeError(`${callback} is not a function`)
+//   }
+
+//   for (let i = 0; i < this.length; i++) {
+//     if (callback(this[i], i)) {
+//       // Եթե որևէ տարր չի բավարարում պայմանին
+//       return true
+//     }
+//   }
+
+//   return false
+// }
+
+// ----------------------------------------------------------------------------
+
+// Array.prototype.exampleOfSplice = function (start, deleteCount) {
+    //   let o = Object(this)
+    //   let len = o.length
+    
+    //   if (start < 0) {
+    //     start = Math.max(len + start, 0)
+    //   }
+    
+    //   // Եթե deleteCount-ը բացակայում է, ջնջում ենք բոլոր տարրերը start-ից հետո
+    //   if (arguments.length === 1) {
+    //     deleteCount = len - start
+    //   } else {
+    //     deleteCount = Math.min(Math.max(deleteCount, 0), len - start) // Սահմանափակում ենք ջնջվող տարրերի քանակը
+    //   }
+    
+    //   let removed = o.slice(start, start + deleteCount)
+    
+    //   let itemsToInsert = Array.prototype.slice.call(arguments, 2)
+    //   let itemsCount = itemsToInsert.length
+    
+    //   // Տեղափոխում ենք մնացած տարրերը
+    //   if (itemsCount > deleteCount) {
+    //     for (let i = len - 1; i >= start + deleteCount; i--) {
+    //       o[i + itemsCount - deleteCount] = o[i]
+    //     }
+    //   } else {
+    //     // Եթե շատ տեղադրումներ չեն, պարզապես տեղափոխում ենք ավելի քիչ տարրեր
+    //     for (let i = start + deleteCount; i < len; i++) {
+    //       o[i + itemsCount - deleteCount] = o[i]
+    //     }
+    //   }
+    
+    //   // Ավելացնում ենք նոր տարրերը
+    //   for (let i = 0; i < itemsCount; i++) {
+    //     o[start + i] = itemsToInsert[i]
+    //   }
+    
+    //   o.length = len - deleteCount + itemsCount // Թարմացնում ենք զանգվածի երկարությունը
+    
+    //   return removed
+    // }
+
+    // Array.prototype.exampleOfSplice2 = function (start, count, ...args) {
+//   let middle = this.slice(start, start + count)
+//   let end = this.slice(start + count)
+//   this.length = start
+//   this.push(...args)
+//   this.push(...end)
+//   return middle
+// }
+
+// let arr = [10, 20, 30, 40, 50, 60, 70, 80]
+// // Ջնջում է որոշակի քանակի տարրեր, և եթե կան նոր տարրեր (որոնք ստանում ենք arguments-ի մնացած մասից), տեղադրում է դրանք
+// let removed = arr.exampleOfSplice2(2, 3, "A", "B", "C")
+// console.log(arr)
+
+// ----------------------------------------------------------------------------
+
+// String.prototype.exampleOfSplit = function (separator) {
+//     const result = []
+//     let start = 0
+//     for (let i = 0; i < this.length; ++i) {
+//         if (this[i] == separator[0]) {
+//             let temp = this.slice(i, i + separator.length)
+//             if (temp == separator) {
+//                 result.push(this.slice(start, i))
+//                 start = i + separator.length
+//             }
+//         }
+
+//     }
+//     result.push(this.slice(start))
+
+//     return result
+// }
+// let text = "abc__fffr__hh"
+// let temp = text.exampleOfSplit("__")
+// console.log(temp)
+
+// ----------------------------------------------------------------------------
+
+// Array.prototype.exampleOfJoin = function (separator = ",") {
+//     separator = String(separator)
+//     let result = ""
+
+//     for (let i = 0; i < this.length; i++) {
+//         if (i > 0) {
+//             result += separator
+//         }
+//         result += this[i] ?? ""
+//     }
+
+//     return result
+// }
+
+// let text = ["a", "b", "c"]
+// let temp = text.exampleOfJoin(" ")
+// console.log(temp)
+
+// Function.prototype.callPoly = function (context, ...args) {
+//   let temp = { ...context }
+//   temp.func = this
+//   temp.func(...args)
+// }
+
+// test.callPoly({ x: 6 }, 1, 2)
+
+// Function.prototype.applyPoly = function (context, args) {
+//   if (!Array.isArray(args)) {
+//     throw new Error("Arguments must be in an array")
+//   }
+//   let temp = { ...context }
+//   temp.func = this
+//   temp.func(args)
+// }
+
+// test.applyPoly({ x: 6 }, [1, 2])
+
+// Function.prototype.bindPoly = function (context) {
+//   let temp = { ...context }
+//   temp.func = this
+
+//   return function (...args) {
+//     temp.func(...args)
+//   }
+// }
+
+// const fn = test.bindPoly({ x: 6 })
+
+// fn(1, 2)
+
+// function* range(a, b) {
+//   while (a < b) {
+//     yield a++
+//   }
+// }
+
+// const gen3 = range(10, 20)
+
+// for (const item of gen3) {
+//   console.log(item)
+// }
+
+// function* fib() {
+//   let current = 0,
+//     next = 1
+//   while (true) {
+//     yield next
+//     ;[current, next] = [next, current + next]
+//   }
+// }
+
+// const fibNums = fib()
+
+// console.log(fibNums.next())
+// console.log(fibNums.next())
+
+// class Reversed extends Array {
+//   constructor(...args) {
+//     super(...args)
+//   }
+
+//   [Symbol.iterator]() {
+//     let i = this.length - 1
+//     return {
+//       next: () => {
+//         if (i >= 0) {
+//           return { value: this[i--], done: false }
+//         }
+//         return { done: true }
+//       },
+//     }
+//   }
+
+//   static [Symbol.hasInstance](model) {
+//     if (!Array.isArray(model)) return false
+
+//     const isNumbers = model.every((el) => typeof el === "number")
+//     if (!isNumbers) return false
+
+//     const isDescending = model.every((elem, idx, arr) => idx === 0 || arr[idx - 1] > elem)
+
+//     return isDescending
+//   }
+// }
+
+// let a = new Reversed()
+// a.push(1, 2, 3, 4, 5, 6)
+// console.log(a)
+// console.log([...a])
+
+// let arr = [5, 4, 3, 2, 1]
+// console.log(arr instanceof Reversed)
+// console.log([1, 2, 3] instanceof Reversed)
+
+// Promise.exampleOfAll = function (args) {
+//     return new Promise((resolve, reject) => {
+//         let count = 0,
+//             values = []
+
+//         args.forEach((promise, idx) => {
+//             promise
+//                 .then((val) => {
+//                     values[idx] = val
+//                     count++
+//                     if (count === args.length) {
+//                         resolve(values)
+//                     }
+//                 })
+//                 .catch(reject)
+//         })
+//     })
+// }
+
+// Promise.exampleOfAny = function (args) {
+//     return new Promise((resolve, reject) => {
+//         let count = 0,
+//             errors = []
+
+//         args.forEach((promise, idx) => {
+//             promise.then(resolve).catch((error) => {
+//                 errors[idx] = error
+//                 count++
+//                 if (count === args.length) {
+//                     reject(new Error(errors))
+//                     // Քանի որ չենք անցել։
+//                     // reject(new AggregateError(errors, "All promises were rejected"));
+//                 }
+//             })
+//         })
+//     })
+// }
+
+// Promise.exampleOfRace = function (args) {
+//     return new Promise((resolve, reject) => {
+//         args.forEach((promise) => {
+//             promise.then(resolve).catch(reject)
+//         })
+//     })
+// }
+
+// Promise.exampleOfAllSettled = function (args) {
+//     return new Promise((resolve) => {
+//         let count = 0,
+//             values = []
+
+//         const handlePromise = (status, value, i) => {
+//             values[i] = { status, value }
+//             count++
+//             if (count === args.length) {
+//                 resolve(values)
+//             }
+//         }
+
+//         args.forEach((promise, idx) => {
+//             promise.then((value) => handlePromise("fulfilled", value, idx)).catch((reason) => handlePromise("rejected", reason, idx))
+//         })
+//     })
+// }
+
+// class Library {
+//   amount = 0
+//   items = []
+//   addBook(book) {
+//     if (!(book instanceof Book)) {
+//       throw new TypeError("Must be a book")
+//     }
+//     this.items.push(book)
+//   }
+//   takeOne(title, user) {
+//     return new Promise((resolve, reject) => {
+//       const found = this.items.find((book) => book.title === title)
+//       if (!found) {
+//         reject(`No such book - ${title}`)
+//       } else if (!found.isAvailable()) {
+//         reject(`${title} is not available. Try again later`)
+//       } else if (user.amount < found.price) {
+//         reject(`You can't afford - ${title}`)
+//       } else {
+//         this.amount += found.price
+//         user.amount -= found.price
+//         found.count--
+//         resolve(`${title} ordered successfully`)
+//       }
+//     })
+//   }
+//   takeAll(titles, user) {
+//     const results = titles.map((title) => this.takeOne(title, user))
+//     return Promise.all(results)
+//   }
+// }
+
+// class User {
+//   constructor(name, amount) {
+//     this.name = name
+//     this.amount = amount
+//   }
+// }
+
+// class Book {
+//   constructor(title, author, price, count) {
+//     this.title = title
+//     this.author = author
+//     this.price = price
+//     this.count = count
+//   }
+//   isAvailable() {
+//     return this.count > 0
+//   }
+// }
+
+// const library = new Library()
+// const user1 = new User("Ashot", 9200)
+// const user2 = new User("Anna", 17200)
+
+// console.log(library)
+// library.addBook(new Book("Hamlet", "Shakespeare", 4200, 3))
+// library.addBook(new Book("Scope and Closure", "Kyle Simpson", 5300, 1))
+// library.addBook(new Book("The Idiot", "Dostoevksi", 4200, 2))
+// library.addBook(new Book("Stranger", "Camus", 1800, 5))
+// library.addBook(new Book("The Trial", "Kafka", 3500, 1))
+
+// library
+//   .takeOne("Scope and Closure", user1)
+//   .then((result) => console.log(result))
+//   .catch((err) => console.error(err))
+
+// library
+//   .takeAll(["Scope and Closure", "The Trial", "Hamlet"], user2)
+//   .then((res) => console.log(res))
+//   .catch((err) => console.error(err))
+
+// console.log(user1)
+
+// console.log(user2)
+
+// class Foo {
+//   [Symbol.toPrimitive](hint) {
+//     console.log(hint);
+//     return 42
+//   }
+// }
+
+// let bar = new Foo()
+
+// console.log(bar + 8);
+// console.log(bar + "8");
+// console.log(bar * 8);
+// console.log(String(bar));
+
+// with (Math) {
+//   console.log(sin(5) + sqrt(6) + pow(2, 3));
+// }
+// let o1 = {
+//   name: "Ash"
+// }
+
+// let m1 = new Map()
+
+// m1.set(o1, [2, 2, 2])
+// console.log(m1.get(o1));
+
+// let x = [1, 2, 3]
+
+// let y = 42
+
+// console.log(typeof x[Symbol.iterator]);
+// console.log(typeof y[Symbol.iterator]);
+
+// IsPrime function with CLOSURE
+
+// const calculate = () => {
+//   let cache = {}
+//   return isPrime
+
+//   function isPrime(p) {
+//     if (p in cache) return cache[p]
+
+//     let T = true
+//     for (let i = 2; i < p; i++) {
+//       if (p % i == 0) {
+//         T = false
+//         break
+//       }
+//     }
+
+//     cache[p] = T
+//     return T
+//   }
+// }
+
+// const checkPrime = calculate()
+
+// console.log(checkPrime(5)) // true
+// console.log(checkPrime(4)) // false
