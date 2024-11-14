@@ -1137,22 +1137,41 @@
 
 // console.log(`Ամենացածր աշխատավարձով դասղեկն է՝ ${lowestPaidLeadTeacher.name} - ${lowestPaidLeadTeacher.salary}`)
 
+Array.prototype.instanceOfMap = function (callback) {
+    if (typeof callback !== "function") {
+        throw new TypeError(`${callback} is not a function`)
+    }
+
+    const result = [];
+
+    for (const [key, value] of this) {
+        result.push(callback(value, key, this));
+    }
+
+    return result;
+}
+
 Array.prototype.instanceOfFilter = function (callback) {
     if (typeof callback !== "function") {
         throw new TypeError(`${callback} is not a function`)
     }
-    let temp = []
+
+    const result = []
     for (let i = 0; i < this.length; i++) {
         if (callback(this[i], i, this)) {
-            temp.push(this[i])
+            result.push(this[i])
         }
     }
-    return temp
+    return result
 }
 
 Array.prototype.instanceOfReduce = function (callback, initial) {
+    if (typeof callback !== "function") {
+        throw new TypeError(`${callback} is not a function`)
+    }
+
     let acc = initial ?? this[0]
-    let start = (initial === undefined) ? 1 : 0
+    let start = initial === undefined ? 1 : 0
 
     for (let i = start; i < this.length; i++) {
         acc = callback(acc, this[i], i, this)
@@ -1161,11 +1180,7 @@ Array.prototype.instanceOfReduce = function (callback, initial) {
     return acc
 }
 
-// let x = [2, 3, 5]
-// let temp = x.reduce2((a, b) => a + b)
-// console.log(temp)
-
-Number.instanceOfisNan = function (x) {
+Number.instanceOfIsNan = function (x) {
     if (typeof x == "number" && x != x) {
         return true
     }
@@ -1270,7 +1285,6 @@ Array.prototype.instanceOfSplice2 = function (start, count, ...args) {
 }
 
 // let arr = [10, 20, 30, 40, 50, 60, 70, 80]
-// // Ջնջում է որոշակի քանակի տարրեր, և եթե կան նոր տարրեր (որոնք ստանում ենք arguments-ի մնացած մասից), տեղադրում է դրանք
 // let removed = arr.exampleOfSplice2(2, 3, "A", "B", "C")
 // console.log(arr)
 
