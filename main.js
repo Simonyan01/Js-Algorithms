@@ -118,15 +118,6 @@
 // Function to find the maximum length between equal characters
 
 // let maxLengthBetweenEqualCharacters = function (str) {
-//   for (let i = 0; i < str.length; i++) {
-//     if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
-
-//     }
-//   }
-//   return -1
-// }
-
-// let maxLengthBetweenEqualCharacters = function (str) {
 //   let maxSubstringLength = 0
 
 //   for (let i = 0; i < str.length; i++) {
@@ -1146,155 +1137,137 @@
 
 // console.log(`Ամենացածր աշխատավարձով դասղեկն է՝ ${lowestPaidLeadTeacher.name} - ${lowestPaidLeadTeacher.salary}`)
 
-// Array.prototype.filter2 = function (callback) {
-//     if (typeof callback !== "function") {
-//         throw new TypeError(`${callback} is not a function`)
-//     }
-//     let temp = []
-//     for (let i = 0; i < this.length; i++) {
-//         if (callback(this[i], i, this)) {
-//             temp.push(this[i])
-//         }
-//     }
-//     return temp
-// }
+Array.prototype.instanceOfFilter = function (callback) {
+    if (typeof callback !== "function") {
+        throw new TypeError(`${callback} is not a function`)
+    }
+    let temp = []
+    for (let i = 0; i < this.length; i++) {
+        if (callback(this[i], i, this)) {
+            temp.push(this[i])
+        }
+    }
+    return temp
+}
 
-// Array.prototype.reduce2 = function (callback, initial) {
-//     let acc = (initial === undefined) ? this[0] : initial
-//     let start = (initial === undefined) ? 1 : 0
+Array.prototype.instanceOfReduce = function (callback, initial) {
+    let acc = initial ?? this[0]
+    let start = (initial === undefined) ? 1 : 0
 
-//     for (let i = start; i < this.length; i++) {
-//         acc = callback(acc, this[i], i, this)
-//     }
+    for (let i = start; i < this.length; i++) {
+        acc = callback(acc, this[i], i, this)
+    }
 
-//     return acc
-// }
+    return acc
+}
 
 // let x = [2, 3, 5]
 // let temp = x.reduce2((a, b) => a + b)
 // console.log(temp)
 
-// Number.isNan2 = function (x) {
-//   if (typeof x == "number" && x != x) {
-//     return true
-//   }
-//   return false
-// }
+Number.instanceOfisNan = function (x) {
+    if (typeof x == "number" && x != x) {
+        return true
+    }
+    return false
+}
 
 // ----------------------------------------------------------------------------
 
-// Array.prototype.exampleOfIncludes = function (searchElement, fromIndex = 0) {
-//     while (fromIndex < this.length) {
-//         if (this[fromIndex] === searchElement) {
-//             return true
-//         }
-//         fromIndex++
-//     }
-//     return false
-
-//     // let n = fromIndex >= 0 ? fromIndex : this.length + fromIndex;
-
-//     // n = Math.max(n, 0);
-
-//     // while (n < this.length) {
-//     //     if (this[n] === searchElement) {
-//     //         return true;
-//     //     }
-//     //     n++;
-//     // }
-//     // return false;
-// }
-
-// let x1 = [6, 7, -2, 89, 8]
-// let temp = x1.exampleOfIncludes(-2)
-// console.log(temp);
+Array.prototype.instanceOfIncludes = function (searchElement, fromIndex = 0) {
+    while (fromIndex < this.length) {
+        if (this[fromIndex] === searchElement) {
+            return true
+        }
+        fromIndex++
+    }
+    return false
+}
 
 // ----------------------------------------------------------------------------
 
-// Array.prototype.exampleOfEvery = function (callback) {
-//   if (typeof callback !== "function") {
-//     throw new TypeError(`${callback} is not a function`)
-//   }
+Array.prototype.instanceOfEvery = function (callback) {
+    if (typeof callback !== "function") {
+        throw new TypeError(`${callback} is not a function`)
+    }
 
-//   for (let i = 0; i < this.length; i++) {
-//     if (!callback(this[i], i)) {
-//       // Եթե որևէ տարր չի բավարարում պայմանին
-//       return false
-//     }
-//   }
+    for (let i = 0; i < this.length; i++) {
+        if (!callback(this[i], i)) {
+            return false
+        }
+    }
 
-//   return true
-// }
+    return true
+}
 
 // ----------------------------------------------------------------------------
 
-// Array.prototype.exampleOfSome = function (callback) {
-//   if (typeof callback !== "function") {
-//     throw new TypeError(`${callback} is not a function`)
-//   }
+Array.prototype.instanceOfSome = function (callback) {
+    if (typeof callback !== "function") {
+        throw new TypeError(`${callback} is not a function`)
+    }
 
-//   for (let i = 0; i < this.length; i++) {
-//     if (callback(this[i], i)) {
-//       // Եթե որևէ տարր չի բավարարում պայմանին
-//       return true
-//     }
-//   }
+    for (let i = 0; i < this.length; i++) {
+        if (callback(this[i], i)) {
+            return true
+        }
+    }
 
-//   return false
-// }
+    return false
+}
 
 // ----------------------------------------------------------------------------
 
 // Array.prototype.exampleOfSplice = function (start, deleteCount) {
-    //   let o = Object(this)
-    //   let len = o.length
-    
-    //   if (start < 0) {
-    //     start = Math.max(len + start, 0)
-    //   }
-    
-    //   // Եթե deleteCount-ը բացակայում է, ջնջում ենք բոլոր տարրերը start-ից հետո
-    //   if (arguments.length === 1) {
-    //     deleteCount = len - start
-    //   } else {
-    //     deleteCount = Math.min(Math.max(deleteCount, 0), len - start) // Սահմանափակում ենք ջնջվող տարրերի քանակը
-    //   }
-    
-    //   let removed = o.slice(start, start + deleteCount)
-    
-    //   let itemsToInsert = Array.prototype.slice.call(arguments, 2)
-    //   let itemsCount = itemsToInsert.length
-    
-    //   // Տեղափոխում ենք մնացած տարրերը
-    //   if (itemsCount > deleteCount) {
-    //     for (let i = len - 1; i >= start + deleteCount; i--) {
-    //       o[i + itemsCount - deleteCount] = o[i]
-    //     }
-    //   } else {
-    //     // Եթե շատ տեղադրումներ չեն, պարզապես տեղափոխում ենք ավելի քիչ տարրեր
-    //     for (let i = start + deleteCount; i < len; i++) {
-    //       o[i + itemsCount - deleteCount] = o[i]
-    //     }
-    //   }
-    
-    //   // Ավելացնում ենք նոր տարրերը
-    //   for (let i = 0; i < itemsCount; i++) {
-    //     o[start + i] = itemsToInsert[i]
-    //   }
-    
-    //   o.length = len - deleteCount + itemsCount // Թարմացնում ենք զանգվածի երկարությունը
-    
-    //   return removed
-    // }
+//   let o = Object(this)
+//   let len = o.length
 
-    // Array.prototype.exampleOfSplice2 = function (start, count, ...args) {
-//   let middle = this.slice(start, start + count)
-//   let end = this.slice(start + count)
-//   this.length = start
-//   this.push(...args)
-//   this.push(...end)
-//   return middle
+//   if (start < 0) {
+//     start = Math.max(len + start, 0)
+//   }
+
+//   // Եթե deleteCount-ը բացակայում է, ջնջում ենք բոլոր տարրերը start-ից հետո
+//   if (arguments.length === 1) {
+//     deleteCount = len - start
+//   } else {
+//     deleteCount = Math.min(Math.max(deleteCount, 0), len - start) // Սահմանափակում ենք ջնջվող տարրերի քանակը
+//   }
+
+//   let removed = o.slice(start, start + deleteCount)
+
+//   let itemsToInsert = Array.prototype.slice.call(arguments, 2)
+//   let itemsCount = itemsToInsert.length
+
+//   // Տեղափոխում ենք մնացած տարրերը
+//   if (itemsCount > deleteCount) {
+//     for (let i = len - 1; i >= start + deleteCount; i--) {
+//       o[i + itemsCount - deleteCount] = o[i]
+//     }
+//   } else {
+//     // Եթե շատ տեղադրումներ չեն, պարզապես տեղափոխում ենք ավելի քիչ տարրեր
+//     for (let i = start + deleteCount; i < len; i++) {
+//       o[i + itemsCount - deleteCount] = o[i]
+//     }
+//   }
+
+//   // Ավելացնում ենք նոր տարրերը
+//   for (let i = 0; i < itemsCount; i++) {
+//     o[start + i] = itemsToInsert[i]
+//   }
+
+//   o.length = len - deleteCount + itemsCount // Թարմացնում ենք զանգվածի երկարությունը
+
+//   return removed
 // }
+
+Array.prototype.instanceOfSplice2 = function (start, count, ...args) {
+    let middle = this.slice(start, start + count)
+    let end = this.slice(start + count)
+    this.length = start
+    this.push(...args)
+    this.push(...end)
+    return middle
+}
 
 // let arr = [10, 20, 30, 40, 50, 60, 70, 80]
 // // Ջնջում է որոշակի քանակի տարրեր, և եթե կան նոր տարրեր (որոնք ստանում ենք arguments-ի մնացած մասից), տեղադրում է դրանք
@@ -1303,207 +1276,240 @@
 
 // ----------------------------------------------------------------------------
 
-// String.prototype.exampleOfSplit = function (separator) {
-//     const result = []
-//     let start = 0
-//     for (let i = 0; i < this.length; ++i) {
-//         if (this[i] == separator[0]) {
-//             let temp = this.slice(i, i + separator.length)
-//             if (temp == separator) {
-//                 result.push(this.slice(start, i))
-//                 start = i + separator.length
-//             }
-//         }
+String.prototype.instanceOfSplit = function (separator) {
+    const result = []
+    let start = 0
+    for (let i = 0; i < this.length; ++i) {
+        if (this[i] == separator[0]) {
+            let temp = this.slice(i, i + separator.length)
+            if (temp == separator) {
+                result.push(this.slice(start, i))
+                start = i + separator.length
+            }
+        }
+    }
+    result.push(this.slice(start))
 
-//     }
-//     result.push(this.slice(start))
+    return result
+}
 
-//     return result
-// }
 // let text = "abc__fffr__hh"
 // let temp = text.exampleOfSplit("__")
 // console.log(temp)
 
-// ----------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------
 
-// Array.prototype.exampleOfJoin = function (separator = ",") {
-//     separator = String(separator)
-//     let result = ""
+Array.prototype.instanceOfJoin = function (separator = ",") {
+    return this.map(item => item ?? "").join(String(separator));
 
-//     for (let i = 0; i < this.length; i++) {
-//         if (i > 0) {
-//             result += separator
-//         }
-//         result += this[i] ?? ""
-//     }
+    // separator = String(separator)
+    // let result = ""
 
-//     return result
-// }
+    // for (let i = 0; i < this.length; i++) {
+    //     if (i > 0) {
+    //         result += separator
+    //     }
+    //     result += this[i] ?? ""
+    // }
 
-// let text = ["a", "b", "c"]
-// let temp = text.exampleOfJoin(" ")
-// console.log(temp)
+    // return result
+}
 
-// Function.prototype.callPoly = function (context, ...args) {
-//   let temp = { ...context }
-//   temp.func = this
-//   temp.func(...args)
-// }
-
-// test.callPoly({ x: 6 }, 1, 2)
-
-// Function.prototype.applyPoly = function (context, args) {
-//   if (!Array.isArray(args)) {
-//     throw new Error("Arguments must be in an array")
-//   }
-//   let temp = { ...context }
-//   temp.func = this
-//   temp.func(args)
-// }
-
-// test.applyPoly({ x: 6 }, [1, 2])
-
-// Function.prototype.bindPoly = function (context) {
-//   let temp = { ...context }
-//   temp.func = this
-
-//   return function (...args) {
-//     temp.func(...args)
-//   }
-// }
-
-// const fn = test.bindPoly({ x: 6 })
-
-// fn(1, 2)
-
-// function* range(a, b) {
-//   while (a < b) {
-//     yield a++
-//   }
-// }
+function* range(a, b) {
+    while (a < b) {
+        yield a++
+    }
+}
 
 // const gen3 = range(10, 20)
 
 // for (const item of gen3) {
-//   console.log(item)
+//     console.log(item)
 // }
 
-// function* fib() {
-//   let current = 0,
-//     next = 1
-//   while (true) {
-//     yield next
-//     ;[current, next] = [next, current + next]
-//   }
-// }
+function* fib() {
+    let current = 0,
+        next = 1
+    while (true) {
+        yield next
+            ;[current, next] = [next, current + next]
+    }
+}
 
 // const fibNums = fib()
 
 // console.log(fibNums.next())
 // console.log(fibNums.next())
 
-// class Reversed extends Array {
-//   constructor(...args) {
-//     super(...args)
-//   }
+class Reversed extends Array {
+    constructor(...args) {
+        super(...args)
+    }
 
-//   [Symbol.iterator]() {
-//     let i = this.length - 1
-//     return {
-//       next: () => {
-//         if (i >= 0) {
-//           return { value: this[i--], done: false }
-//         }
-//         return { done: true }
-//       },
-//     }
-//   }
+    [Symbol.iterator]() {
+        let i = this.length - 1
+        return {
+            next: () => {
+                if (i >= 0) {
+                    return { value: this[i--], done: false }
+                }
+                return { done: true }
+            },
+        }
+    }
 
-//   static [Symbol.hasInstance](model) {
-//     if (!Array.isArray(model)) return false
+    static [Symbol.hasInstance](model) {
+        if (!Array.isArray(model)) return false
 
-//     const isNumbers = model.every((el) => typeof el === "number")
-//     if (!isNumbers) return false
+        const isNumbers = model.every((el) => typeof el === "number")
+        if (!isNumbers) return false
+        if (model.length > 0) {
+            const isDescending = model.every((elem, idx, arr) => idx === 0 || arr[idx - 1] > elem)
 
-//     const isDescending = model.every((elem, idx, arr) => idx === 0 || arr[idx - 1] > elem)
+            return isDescending
+        }
+        return false
+    }
+}
 
-//     return isDescending
-//   }
-// }
+// let validDescending = new Reversed(10, 5, 3);
+// let invalidDescending = new Reversed(3, 7, 10);
 
-// let a = new Reversed()
-// a.push(1, 2, 3, 4, 5, 6)
-// console.log(a)
-// console.log([...a])
+// console.log(validDescending instanceof Reversed);
+// console.log(invalidDescending instanceof Reversed);
 
-// let arr = [5, 4, 3, 2, 1]
-// console.log(arr instanceof Reversed)
-// console.log([1, 2, 3] instanceof Reversed)
 
-// Promise.exampleOfAll = function (args) {
-//     return new Promise((resolve, reject) => {
-//         let count = 0,
-//             values = []
+Function.prototype.callPoly = function (context, ...args) {
+    let temp = { ...context }
+    temp.func = this
+    temp.func(...args)
+}
 
-//         args.forEach((promise, idx) => {
-//             promise
-//                 .then((val) => {
-//                     values[idx] = val
-//                     count++
-//                     if (count === args.length) {
-//                         resolve(values)
-//                     }
-//                 })
-//                 .catch(reject)
-//         })
-//     })
-// }
+Function.prototype.applyPoly = function (context, args) {
+    if (!Array.isArray(args)) {
+        throw new Error("Arguments must be in an array")
+    }
+    let temp = { ...context }
+    temp.func = this
+    temp.func(args)
+}
 
-// Promise.exampleOfAny = function (args) {
-//     return new Promise((resolve, reject) => {
-//         let count = 0,
-//             errors = []
+Function.prototype.bindPoly = function (context) {
+    let temp = { ...context }
+    temp.func = this
 
-//         args.forEach((promise, idx) => {
-//             promise.then(resolve).catch((error) => {
-//                 errors[idx] = error
-//                 count++
-//                 if (count === args.length) {
-//                     reject(new Error(errors))
-//                     // Քանի որ չենք անցել։
-//                     // reject(new AggregateError(errors, "All promises were rejected"));
-//                 }
-//             })
-//         })
-//     })
-// }
+    return function (...args) {
+        temp.func(...args)
+    }
+}
 
-// Promise.exampleOfRace = function (args) {
-//     return new Promise((resolve, reject) => {
-//         args.forEach((promise) => {
-//             promise.then(resolve).catch(reject)
-//         })
-//     })
-// }
+Promise.instanceOfAll = function (args) {
+    return new Promise((resolve, reject) => {
+        let count = 0,
+            values = []
 
-// Promise.exampleOfAllSettled = function (args) {
-//     return new Promise((resolve) => {
-//         let count = 0,
-//             values = []
+        args.forEach((promise, idx) => {
+            promise
+                .then((val) => {
+                    values[idx] = val
+                    count++
+                    if (count === args.length) {
+                        resolve(values)
+                    }
+                })
+                .catch(reject)
+        })
+    })
+}
 
-//         const handlePromise = (status, value, i) => {
-//             values[i] = { status, value }
-//             count++
-//             if (count === args.length) {
-//                 resolve(values)
-//             }
-//         }
+Promise.instanceOfAny = function (args) {
+    return new Promise((resolve, reject) => {
+        let count = 0,
+            errors = []
 
-//         args.forEach((promise, idx) => {
-//             promise.then((value) => handlePromise("fulfilled", value, idx)).catch((reason) => handlePromise("rejected", reason, idx))
-//         })
-//     })
-// }
+        args.forEach((promise, idx) => {
+            promise
+                .then(resolve)
+                .catch((error) => {
+                    errors[idx] = error
+                    count++
+                    if (count === args.length) {
+                        reject(new Error(errors))
+                        // Քանի որ չենք անցել։
+                        // reject(new AggregateError(errors, "All promises were rejected"));
+                    }
+                })
+        })
+    })
+}
+
+Promise.instanceOfRace = function (args) {
+    return new Promise((resolve, reject) => {
+        args.forEach((promise) => {
+            promise
+                .then(resolve)
+                .catch(reject)
+        })
+    })
+}
+
+Promise.instanceOfAllSettled = function (args) {
+    return new Promise((resolve) => {
+        let count = 0,
+            values = []
+
+        const handlePromise = (status, value, i) => {
+            values[i] = { status, value }
+            count++
+            if (count === args.length) {
+                resolve(values)
+            }
+        }
+
+        args.forEach((promise, idx) => {
+            promise
+                .then((value) => handlePromise("fulfilled", value, idx))
+                .catch((reason) => handlePromise("rejected", reason, idx))
+        })
+    })
+}
+const calculate = () => {
+    let cache = {}
+    return isPrime
+
+    function isPrime(num) {
+        if (num <= 1) return false
+        if (num in cache) return cache[num]
+
+        let target = true
+        for (let i = 2; i <= Math.sqrt(num); ++i) {
+            if (num % i == 0) {
+                target = false
+                break
+            }
+        }
+
+        cache[num] = target
+        return target
+    }
+
+}
+
+const fibonacciSequence = (num, memo = {}) => {
+    if (num <= 1) return num
+    if (num in memo) return memo[num]
+
+    memo[num] = fibonacciSequence(num - 1) + fibonacciSequence(num - 2)
+    return memo[num]
+}
+
+const factorial = (num, memo = {}) => {
+    if (num <= 1) return 1
+    if (memo[num]) return memo[num]
+
+    memo[num] = num * factorial(num - 1, memo)
+    return memo[num]
+}
 
 // class Library {
 //   amount = 0
@@ -1582,10 +1588,10 @@
 // console.log(user2)
 
 // class Foo {
-//   [Symbol.toPrimitive](hint) {
-//     console.log(hint);
-//     return 42
-//   }
+//     [Symbol.toPrimitive](hint) {
+//         console.log(hint);
+//         return 42
+//     }
 // }
 
 // let bar = new Foo()
@@ -1598,8 +1604,9 @@
 // with (Math) {
 //   console.log(sin(5) + sqrt(6) + pow(2, 3));
 // }
+
 // let o1 = {
-//   name: "Ash"
+//     name: "Ash"
 // }
 
 // let m1 = new Map()
@@ -1613,30 +1620,3 @@
 
 // console.log(typeof x[Symbol.iterator]);
 // console.log(typeof y[Symbol.iterator]);
-
-// IsPrime function with CLOSURE
-
-// const calculate = () => {
-//   let cache = {}
-//   return isPrime
-
-//   function isPrime(p) {
-//     if (p in cache) return cache[p]
-
-//     let T = true
-//     for (let i = 2; i < p; i++) {
-//       if (p % i == 0) {
-//         T = false
-//         break
-//       }
-//     }
-
-//     cache[p] = T
-//     return T
-//   }
-// }
-
-// const checkPrime = calculate()
-
-// console.log(checkPrime(5)) // true
-// console.log(checkPrime(4)) // false

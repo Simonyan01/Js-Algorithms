@@ -1,0 +1,29 @@
+#list {
+  display: flex;
+  width: 600px;
+  user-select: none;
+  margin: 20px 0;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#list div {
+  width: 50%;
+  height: 100px;
+  padding: 20px;
+  color: aliceblue;
+  background: red;
+  border-radius: 10px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.done {
+  opacity: 0.6;
+}
+
+.done p {
+  text-decoration: line-through;
+}
